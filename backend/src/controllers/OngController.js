@@ -3,6 +3,9 @@ const connection = require('../database/connection');
 
 module.exports = {
     async index(request,response) {
+        console.log(request.body);
+        const { id } = request.body;
+        
         const ongs = await connection('ongs').select('*');
     
         return response.json(ongs);
